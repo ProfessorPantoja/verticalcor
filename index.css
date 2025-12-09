@@ -1,0 +1,78 @@
+/* Vertical Cor - Estilos Globais */
+
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar para navegadores baseados em Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utility class para o slider antes/depois */
+.clip-path-slider {
+  clip-path: inset(0 var(--clip-pos) 0 0);
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(8, 145, 178, 0.3);
+  color: #0f172a;
+}
+
+/* Focus styles para acessibilidade */
+:focus-visible {
+  outline: 2px solid #0891b2;
+  outline-offset: 2px;
+}
+
+/* Animação de loading genérica */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Transições suaves globais */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Container max-width para telas muito grandes */
+.container-max {
+  max-width: 1440px;
+  margin: 0 auto;
+}
