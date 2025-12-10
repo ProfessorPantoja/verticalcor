@@ -105,7 +105,7 @@ function App() {
                   {item}
                 </a>
               ))}
-              <a href={whatsappLink} className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5 ${isHeaderSolid ? 'bg-cyan-600 text-white hover:bg-cyan-500' : 'bg-white text-navy-900 hover:bg-slate-100'}`}>
+              <a href={whatsappFloatingButton} className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5 ${isHeaderSolid ? 'bg-cyan-600 text-white hover:bg-cyan-500' : 'bg-white text-navy-900 hover:bg-slate-100'}`}>
                 <Phone size={18} /> Orçamento
               </a>
             </nav>
@@ -129,7 +129,7 @@ function App() {
               <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 font-medium rounded-lg">Serviços</a>
               <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 font-medium rounded-lg">Portfólio</a>
               <a href="#contato" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 font-medium rounded-lg">Contato</a>
-              <a href={whatsappLink} className="block mt-4 text-center bg-cyan-600 text-white px-3 py-3 rounded-lg font-bold">
+              <a href={whatsappFloatingButton} className="block mt-4 text-center bg-cyan-600 text-white px-3 py-3 rounded-lg font-bold">
                 Orçamento via WhatsApp
               </a>
             </div>
