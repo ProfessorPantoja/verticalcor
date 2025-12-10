@@ -49,8 +49,8 @@ function App() {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
 
-  const whatsappLink = "https://wa.me/5527999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20pintura%20predial.";
-  const whatsappFloatingButton = "https://wa.me/5527999351626?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20pintura%20predial.";
+  const whatsappLink = "https://wa.me/5527999999999?text=Olá!%20Acessei%20o%20site%20da%20Vertical%20Cor%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
+  const whatsappFloatingButton = "https://wa.me/5527999351626?text=Olá!%20Acessei%20o%20site%20da%20Vertical%20Cor%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
 
   const faqs: FAQItem[] = [
     { question: "Vocês cobram pelo orçamento?", answer: "Não! A visita técnica e o orçamento são 100% gratuitos em Vila Velha e região." },
