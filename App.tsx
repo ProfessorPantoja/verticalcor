@@ -15,13 +15,13 @@ import {
   ChevronUp,
   Wrench,
   Send,
-  Building,
-  Play
+  Building
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import MapSection from './components/MapSection';
 import { Reveal } from './components/Reveal';
+import { SmartVideoPlayer } from './components/SmartVideoPlayer';
 import { FAQItem } from './types';
 
 function App() {
@@ -202,21 +202,8 @@ function App() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="aspect-video w-full bg-slate-100 rounded-2xl overflow-hidden shadow-2xl relative group cursor-pointer border border-slate-200">
-              {/* Placeholder para o vídeo */}
-              <div className="absolute inset-0 flex items-center justify-center bg-navy-900/5 group-hover:bg-navy-900/10 transition-colors">
-                <div className="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 text-white fill-current ml-1" />
-                </div>
-              </div>
-              <img
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                alt="Video Thumbnail"
-                className="w-full h-full object-cover mix-blend-multiply opacity-80"
-              />
-              <div className="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded text-sm font-medium backdrop-blur-sm">
-                Vídeo Institucional - 01:30
-              </div>
+            <div className="aspect-video w-full bg-slate-100 rounded-2xl overflow-hidden shadow-2xl relative border border-slate-200">
+              <SmartVideoPlayer videoId="-A7RzIT8QWw" />
             </div>
           </Reveal>
         </div>
