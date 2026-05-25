@@ -333,7 +333,7 @@ function App() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="rounded-2xl overflow-hidden border-4 border-navy-800 shadow-2xl shadow-black/50">
+            <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border-4 border-navy-800 shadow-2xl shadow-black/50">
               <BeforeAfterSlider
                 beforeImage="/antes.webp"
                 afterImage="/depois.webp"

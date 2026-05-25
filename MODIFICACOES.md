@@ -35,4 +35,5 @@ Registro simples das alterações editoriais/comerciais do site.
 6. 2026-05-25 - Imagens reais no slider Antes/Depois
    - Substituição das imagens ilustrativas externas do Unsplash pelas imagens WebP reais fornecidas pelo cliente (`antes.webp` e `depois.webp`) no `BeforeAfterSlider`.
    - Atualização da legenda para "Antes e Depois real de pintura executada pela Vertical Cor".
+   - Correção de layout: Adicionado `max-w-4xl mx-auto` ao container de borda externa do slider no `App.tsx` para eliminar as colunas vazias laterais detectadas no print do usuário.
 
