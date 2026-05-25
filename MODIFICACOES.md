@@ -36,4 +36,5 @@ Registro simples das alterações editoriais/comerciais do site.
    - Substituição das imagens ilustrativas externas do Unsplash pelas imagens WebP reais fornecidas pelo cliente (`antes.webp` e `depois.webp`) no `BeforeAfterSlider`.
    - Atualização da legenda para "Antes e Depois real de pintura executada pela Vertical Cor".
    - Correção de layout: Adicionado `max-w-4xl mx-auto` ao container de borda externa do slider no `App.tsx` para eliminar as colunas vazias laterais detectadas no print do usuário.
+   - Correção visual nos selos do Slider: Implementada opacidade dinâmica com transição suave nos selos "ANTES" e "DEPOIS" em `BeforeAfterSlider.tsx`, fazendo-os desaparecer progressivamente quando a barra de arrastar atinge as extremidades (evitando que o selo "DEPOIS" fique visível quando 100% do "ANTES" está em exibição).
 

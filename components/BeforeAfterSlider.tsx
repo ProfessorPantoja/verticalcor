@@ -60,7 +60,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
       
-      <div className="absolute top-4 right-4 bg-navy-900/80 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm z-10">
+      <div className={`absolute top-4 right-4 bg-navy-900/80 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm z-10 transition-opacity duration-300 ${sliderPosition > 93 ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         DEPOIS
       </div>
 
@@ -75,7 +75,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
           className="absolute top-0 left-0 h-full w-full object-cover max-w-none" 
           style={{ width: containerRef.current?.offsetWidth }}
         />
-        <div className="absolute top-4 left-4 bg-gray-900/80 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm z-10">
+        <div className={`absolute top-4 left-4 bg-gray-900/80 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm z-10 transition-opacity duration-300 ${sliderPosition < 7 ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           ANTES
         </div>
       </div>
