@@ -20,8 +20,8 @@ Lista prática do que eu preciso revisar, decidir ou preparar antes de apresenta
    - Ideia futura: gerar ou testar outros vídeos depois, se fizer sentido.
 
 4. Política de Privacidade e Termos de Uso
-   - Status: fazer agora.
-   - Criar páginas mínimas e linkar no rodapé.
+   - Status: feito em versão mínima.
+   - Páginas criadas e linkadas no rodapé.
    - Observação: texto básico para site simples de contato/orçamento; não substitui revisão jurídica.
 
 5. Texto sobre "engenheiro ou técnico especializado"
@@ -35,8 +35,8 @@ Lista prática do que eu preciso revisar, decidir ou preparar antes de apresenta
    - Decisão atual: não usar mapa embutido grande para não ocupar espaço desnecessário; para o usuário, abrir direto no Maps costuma ser mais útil.
 
 7. Ano do rodapé
-   - Status: corrigir agora.
-   - Atualizar `© 2025` para `© 2026`.
+   - Status: corrigido.
+   - Atualizado de `© 2025` para `© 2026`.
 
 8. Provas reais de serviço
    - Status: pendente.

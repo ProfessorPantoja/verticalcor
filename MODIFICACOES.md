@@ -14,3 +14,9 @@ Registro simples das alterações editoriais/comerciais do site.
    - Separar pendências internas do projeto em `PENDENCIAS.md`.
    - Criar `PENDENCIAS-PEDRO.md` para o que precisa ser pedido ou confirmado com o cliente.
    - Registrar decisões atuais: manter imagem principal por enquanto, manter vídeo aprovado e manter mapa como link direto.
+
+3. 2026-05-25 - Rodapé e páginas legais mínimas
+   - Atualizar ano do rodapé para 2026.
+   - Criar página mínima de Política de Privacidade.
+   - Criar página mínima de Termos de Uso.
+   - Linkar as duas páginas no rodapé.
