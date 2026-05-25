@@ -335,11 +335,11 @@ function App() {
           <Reveal delay={0.2}>
             <div className="rounded-2xl overflow-hidden border-4 border-navy-800 shadow-2xl shadow-black/50">
               <BeforeAfterSlider
-                beforeImage="https://images.unsplash.com/photo-1594488518001-16c52683058c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                afterImage="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                beforeImage="/antes.webp"
+                afterImage="/depois.webp"
               />
             </div>
-            <p className="text-center text-slate-500 text-sm mt-4">Imagens meramente ilustrativas para demonstração da interface</p>
+            <p className="text-center text-slate-500 text-sm mt-4">Antes e Depois real de pintura executada pela Vertical Cor</p>
           </Reveal>
         </div>
       </section>

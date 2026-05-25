@@ -31,3 +31,8 @@ Registro simples das alterações editoriais/comerciais do site.
    - Reformatar o documento com capa, seções numeradas e quebras de página sugeridas.
    - Adicionar assinatura/rodapé: Fabio Pantoja - Consultor de IA para Empresas.
    - Criar versão HTML imprimível do documento para facilitar a conversão em PDF.
+
+6. 2026-05-25 - Imagens reais no slider Antes/Depois
+   - Substituição das imagens ilustrativas externas do Unsplash pelas imagens WebP reais fornecidas pelo cliente (`antes.webp` e `depois.webp`) no `BeforeAfterSlider`.
+   - Atualização da legenda para "Antes e Depois real de pintura executada pela Vertical Cor".
+
