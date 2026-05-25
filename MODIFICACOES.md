@@ -25,3 +25,9 @@ Registro simples das alterações editoriais/comerciais do site.
    - Criar `DOCUMENTO-EXECUTIVO-SITE-VERTICAL-COR.md`.
    - Explicar, em linguagem leiga, as etapas e bastidores envolvidos na criação do site.
    - Registrar pontos de valor: estrutura, contato, localização, confiança, SEO, publicação e melhorias futuras.
+
+5. 2026-05-25 - Preparação do documento executivo para PDF
+   - Adicionar a ideia do site como extensão poderosa do cartão de visitas.
+   - Reformatar o documento com capa, seções numeradas e quebras de página sugeridas.
+   - Adicionar assinatura/rodapé: Fabio Pantoja - Consultor de IA para Empresas.
+   - Criar versão HTML imprimível do documento para facilitar a conversão em PDF.

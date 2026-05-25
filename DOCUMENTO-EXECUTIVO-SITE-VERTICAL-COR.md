@@ -1,44 +1,72 @@
-# Documento Executivo - Site Vertical Cor
+---
+title: "Documento Executivo - Site Vertical Cor"
+author: "Fabio Pantoja - Consultor de IA para Empresas"
+date: "25 de maio de 2026"
+lang: "pt-BR"
+---
 
-## Resumo
+# Documento Executivo
+
+## Site Vertical Cor
+
+**Objetivo:** apresentar, de forma simples e clara, o trabalho envolvido na criação e preparação do site da Vertical Cor para uso comercial.
+
+**Responsável:** Fabio Pantoja - Consultor de IA para Empresas
+
+**Data:** 25 de maio de 2026
+
+<div style="page-break-after: always;"></div>
+
+## 1. Resumo Executivo
 
 Um site profissional não é apenas uma página bonita na internet. Ele envolve planejamento, organização de informações, escrita comercial, escolha de imagens, experiência no celular, botões de contato, localização, confiança, desempenho, publicação e preparação para ser encontrado por possíveis clientes.
 
 No caso da Vertical Cor, o objetivo é criar uma presença digital simples de usar, bonita, direta e voltada para gerar contatos pelo WhatsApp.
 
-## O Que Foi Pensado no Projeto
+O site também funciona como uma extensão poderosa do cartão de visitas. Um cartão físico tem pouco espaço, geralmente algo perto de 9 cm por 5 cm. No site, é possível apresentar muito mais: serviços, diferenciais, fotos, vídeos, localização, formas de contato, antes/depois, depoimentos e informações que ajudam o cliente a confiar antes de pedir orçamento.
 
-1. Clareza para o cliente final
-   - Mostrar rapidamente o que a Vertical Cor faz.
-   - Explicar os serviços de pintura, acabamento, fachada e restauração.
-   - Criar chamadas claras para orçamento.
-   - Evitar excesso de texto que atrapalhe a decisão.
+<div style="page-break-after: always;"></div>
 
-2. Aparência profissional
-   - Escolha de uma primeira dobra visualmente forte.
-   - Uso da identidade da Vertical Cor.
-   - Organização das seções em uma ordem lógica.
-   - Cuidado para o site passar confiança, qualidade e acabamento.
+## 2. O Que Foi Pensado no Projeto
 
-3. Conversão em contato
-   - Botões de WhatsApp em pontos estratégicos.
-   - Mensagem automática para facilitar o primeiro contato.
-   - Formulário simples que direciona para o WhatsApp.
-   - Telefone real e endereço real integrados ao site.
+### Clareza para o cliente final
 
-4. Localização e acesso
-   - Inclusão do endereço completo.
-   - Inclusão de ponto de referência.
-   - Link direto para o Google Maps.
-   - Decisão de manter o mapa simples, sem ocupar espaço desnecessário no site.
+- Mostrar rapidamente o que a Vertical Cor faz.
+- Explicar os serviços de pintura, acabamento, fachada e restauração.
+- Criar chamadas claras para orçamento.
+- Evitar excesso de texto que atrapalhe a decisão.
 
-5. Conteúdo de confiança
-   - Seções que mostram problemas comuns: infiltração, desvalorização e má impressão.
-   - Apresentação dos serviços principais.
-   - Área de antes/depois para demonstrar transformação.
-   - Espaço para futuramente incluir obras reais, fotos, vídeos e depoimentos.
+### Aparência profissional
 
-## Bastidores Que Normalmente Não Aparecem
+- Escolha de uma primeira dobra visualmente forte.
+- Uso da identidade da Vertical Cor.
+- Organização das seções em uma ordem lógica.
+- Cuidado para o site passar confiança, qualidade e acabamento.
+
+### Conversão em contato
+
+- Botões de WhatsApp em pontos estratégicos.
+- Mensagem automática para facilitar o primeiro contato.
+- Formulário simples que direciona para o WhatsApp.
+- Telefone real e endereço real integrados ao site.
+
+### Localização e acesso
+
+- Inclusão do endereço completo.
+- Inclusão de ponto de referência.
+- Link direto para o Google Maps.
+- Decisão de manter o mapa simples, sem ocupar espaço desnecessário no site.
+
+### Conteúdo de confiança
+
+- Seções que mostram problemas comuns: infiltração, desvalorização e má impressão.
+- Apresentação dos serviços principais.
+- Área de antes/depois para demonstrar transformação.
+- Espaço para futuramente incluir obras reais, fotos, vídeos e depoimentos.
+
+<div style="page-break-after: always;"></div>
+
+## 3. Bastidores Que Normalmente Não Aparecem
 
 Para o visitante, o site parece simples. Mas por trás dessa simplicidade existem várias decisões:
 
@@ -55,7 +83,9 @@ Para o visitante, o site parece simples. Mas por trás dessa simplicidade existe
 11. Avaliar performance e carregamento.
 12. Organizar futuras melhorias com fotos reais, vídeos e provas sociais.
 
-## Por Que Fotos e Provas Reais São Importantes
+Essas etapas não aparecem para o visitante como tarefas separadas, mas fazem diferença direta na qualidade final do site e na chance de transformar uma visita em contato.
+
+## 4. Por Que Fotos e Provas Reais São Importantes
 
 Empresas de serviço ganham muita força quando documentam bem o próprio trabalho.
 
@@ -63,7 +93,9 @@ Fotos de antes/depois, vídeos curtos, bastidores da equipe trabalhando e depoim
 
 Mesmo quando a empresa já tem muitos serviços realizados, se não houver registro visual, fica mais difícil provar qualidade para quem ainda não conhece a marca.
 
-## O Que Ainda Pode Melhorar
+<div style="page-break-after: always;"></div>
+
+## 5. O Que Ainda Pode Melhorar
 
 1. Substituir imagens ilustrativas por fotos reais de obras.
 2. Criar um antes/depois real da Vertical Cor.
@@ -74,7 +106,7 @@ Mesmo quando a empresa já tem muitos serviços realizados, se não houver regis
 7. Otimizar a parte técnica para produção final.
 8. Reunir depoimentos e provas reais de clientes.
 
-## Busca no Google e Em Ferramentas de IA
+## 6. Busca no Google e Em Ferramentas de IA
 
 Hoje, estar na internet não significa automaticamente ser encontrado. É preciso preparar o site para que buscadores entendam:
 
@@ -88,7 +120,9 @@ Hoje, estar na internet não significa automaticamente ser encontrado. É precis
 
 Além do Google, cada vez mais pessoas usam ferramentas de inteligência artificial para pesquisar empresas, serviços e recomendações. Por isso, o site precisa ter informações claras, organizadas e consistentes.
 
-## Publicação Definitiva
+<div style="page-break-after: always;"></div>
+
+## 7. Publicação Definitiva
 
 Publicar o site é uma etapa. Deixar o site pronto para uso real é outra.
 
@@ -105,8 +139,14 @@ Para uma publicação mais definitiva, é importante revisar:
 9. indexação nos mecanismos de busca;
 10. futuras melhorias com conteúdo real.
 
-## Conclusão
+## 8. Conclusão
 
 O site da Vertical Cor já tem uma base visual e comercial forte. A próxima etapa é transformar essa base em uma ferramenta cada vez mais confiável para gerar contatos, apresentar melhor os serviços e valorizar a imagem da empresa.
 
 O trabalho não é apenas "colocar um site no ar". É organizar a presença digital da empresa para que o cliente entenda rápido, confie mais e tenha um caminho simples para pedir orçamento.
+
+---
+
+**Fabio Pantoja - Consultor de IA para Empresas**
+
+Documento preparado para apresentação executiva do projeto Site Vertical Cor.

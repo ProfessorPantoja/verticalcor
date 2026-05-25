@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documento Executivo - Site Vertical Cor</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 20mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #0f172a;
+      background: #f8fafc;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    section {
+      padding: 42px 48px;
+      page-break-after: always;
+    }
+
+    section:last-child {
+      page-break-after: auto;
+    }
+
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 10px solid #0891b2;
+    }
+
+    .label {
+      color: #0891b2;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0 8px;
+      font-size: 46px;
+      line-height: 1;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0f172a;
+      font-size: 26px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #0f172a;
+      font-size: 17px;
+    }
+
+    p,
+    li {
+      color: #334155;
+      font-size: 14.5px;
+    }
+
+    ul,
+    ol {
+      padding-left: 22px;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      color: #475569;
+      font-size: 18px;
+    }
+
+    .meta {
+      margin-top: 42px;
+      color: #475569;
+    }
+
+    .callout {
+      margin: 24px 0;
+      padding: 18px 20px;
+      background: #ecfeff;
+      border-left: 4px solid #0891b2;
+      border-radius: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .box {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      background: #ffffff;
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      main {
+        max-width: none;
+      }
+
+      .cover {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="cover">
+      <div class="label">Documento Executivo</div>
+      <h1>Site Vertical Cor</h1>
+      <p class="subtitle">Apresentação simples e clara do trabalho envolvido na criação e preparação do site da Vertical Cor para uso comercial.</p>
+      <div class="meta">
+        <p><strong>Responsável:</strong> Fabio Pantoja - Consultor de IA para Empresas</p>
+        <p><strong>Data:</strong> 25 de maio de 2026</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>1. Resumo Executivo</h2>
+      <p>Um site profissional não é apenas uma página bonita na internet. Ele envolve planejamento, organização de informações, escrita comercial, escolha de imagens, experiência no celular, botões de contato, localização, confiança, desempenho, publicação e preparação para ser encontrado por possíveis clientes.</p>
+      <p>No caso da Vertical Cor, o objetivo é criar uma presença digital simples de usar, bonita, direta e voltada para gerar contatos pelo WhatsApp.</p>
+      <div class="callout">
+        <p><strong>O site também funciona como uma extensão poderosa do cartão de visitas.</strong> Um cartão físico tem pouco espaço, geralmente algo perto de 9 cm por 5 cm. No site, é possível apresentar muito mais: serviços, diferenciais, fotos, vídeos, localização, formas de contato, antes/depois, depoimentos e informações que ajudam o cliente a confiar antes de pedir orçamento.</p>
+      </div>
+      <div class="footer">Fabio Pantoja - Consultor de IA para Empresas</div>
+    </section>
+
+    <section>
+      <h2>2. O Que Foi Pensado no Projeto</h2>
+      <div class="grid">
+        <div class="box">
+          <h3>Clareza</h3>
+          <p>Mostrar rapidamente o que a Vertical Cor faz, explicar os serviços e criar chamadas claras para orçamento.</p>
+        </div>
+        <div class="box">
+          <h3>Aparência profissional</h3>
+          <p>Usar identidade visual, primeira dobra forte e organização das seções em uma ordem lógica.</p>
+        </div>
+        <div class="box">
+          <h3>Conversão em contato</h3>
+          <p>Posicionar botões de WhatsApp, mensagem automática, formulário simples, telefone e endereço real.</p>
+        </div>
+        <div class="box">
+          <h3>Localização e confiança</h3>
+          <p>Incluir endereço completo, ponto de referência, link para Google Maps e espaço para fotos, vídeos e depoimentos.</p>
+        </div>
+      </div>
+      <div class="footer">Fabio Pantoja - Consultor de IA para Empresas</div>
+    </section>
+
+    <section>
+      <h2>3. Bastidores Que Normalmente Não Aparecem</h2>
+      <p>Para o visitante, o site parece simples. Mas por trás dessa simplicidade existem várias decisões:</p>
+      <ol>
+        <li>Definir a estrutura da página.</li>
+        <li>Escolher a ordem das seções.</li>
+        <li>Pensar nas palavras certas para gerar interesse.</li>
+        <li>Ajustar chamadas para WhatsApp.</li>
+        <li>Corrigir telefone, endereço e pontos de contato.</li>
+        <li>Pensar no comportamento no celular.</li>
+        <li>Verificar links.</li>
+        <li>Preparar páginas básicas de Política de Privacidade e Termos de Uso.</li>
+        <li>Verificar pendências antes da publicação definitiva.</li>
+        <li>Pensar em busca no Google e presença em mecanismos de pesquisa.</li>
+        <li>Avaliar performance e carregamento.</li>
+        <li>Organizar futuras melhorias com fotos reais, vídeos e provas sociais.</li>
+      </ol>
+      <p>Essas etapas não aparecem para o visitante como tarefas separadas, mas fazem diferença direta na qualidade final do site e na chance de transformar uma visita em contato.</p>
+      <div class="footer">Fabio Pantoja - Consultor de IA para Empresas</div>
+    </section>
+
+    <section>
+      <h2>4. Provas Reais e Melhorias Futuras</h2>
+      <p>Empresas de serviço ganham muita força quando documentam bem o próprio trabalho.</p>
+      <p>Fotos de antes/depois, vídeos curtos, bastidores da equipe trabalhando e depoimentos de clientes ajudam o visitante a confiar mais rápido. Esse material também pode ser usado no site, WhatsApp, Instagram, Google Perfil da Empresa e campanhas futuras.</p>
+      <h3>O que ainda pode melhorar</h3>
+      <ol>
+        <li>Substituir imagens ilustrativas por fotos reais de obras.</li>
+        <li>Criar um antes/depois real da Vertical Cor.</li>
+        <li>Testar novas imagens de fundo para a primeira dobra.</li>
+        <li>Confirmar frases comerciais importantes, como visita técnica especializada.</li>
+        <li>Preparar melhor o site para busca orgânica no Google.</li>
+        <li>Configurar domínio definitivo.</li>
+        <li>Otimizar a parte técnica para produção final.</li>
+        <li>Reunir depoimentos e provas reais de clientes.</li>
+      </ol>
+      <div class="footer">Fabio Pantoja - Consultor de IA para Empresas</div>
+    </section>
+
+    <section>
+      <h2>5. Busca, Publicação e Conclusão</h2>
+      <p>Hoje, estar na internet não significa automaticamente ser encontrado. É preciso preparar o site para que buscadores entendam o nome da empresa, cidade, região de atendimento, serviços, diferenciais, dados de contato, localização e confiança do negócio.</p>
+      <p>Além do Google, cada vez mais pessoas usam ferramentas de inteligência artificial para pesquisar empresas, serviços e recomendações. Por isso, o site precisa ter informações claras, organizadas e consistentes.</p>
+      <p>Publicar o site é uma etapa. Deixar o site pronto para uso real é outra. Para uma publicação definitiva, é importante revisar domínio, hospedagem, velocidade, versão mobile, SEO local, links de contato, imagens reais, textos legais básicos e indexação.</p>
+      <p>O trabalho não é apenas "colocar um site no ar". É organizar a presença digital da empresa para que o cliente entenda rápido, confie mais e tenha um caminho simples para pedir orçamento.</p>
+      <div class="footer">Fabio Pantoja - Consultor de IA para Empresas</div>
+    </section>
+  </main>
+</body>
+
+</html>
