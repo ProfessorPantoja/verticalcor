@@ -20,3 +20,8 @@ Registro simples das alterações editoriais/comerciais do site.
    - Criar página mínima de Política de Privacidade.
    - Criar página mínima de Termos de Uso.
    - Linkar as duas páginas no rodapé.
+
+4. 2026-05-25 - Documento executivo do projeto
+   - Criar `DOCUMENTO-EXECUTIVO-SITE-VERTICAL-COR.md`.
+   - Explicar, em linguagem leiga, as etapas e bastidores envolvidos na criação do site.
+   - Registrar pontos de valor: estrutura, contato, localização, confiança, SEO, publicação e melhorias futuras.
