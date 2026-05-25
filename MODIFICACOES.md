@@ -9,3 +9,8 @@ Registro simples das alterações editoriais/comerciais do site.
    - Fazer botões e telefone abrirem o WhatsApp com mensagem do site: "Olá, vim do site da VERTICAL COR e quero mais informações."
    - Fazer o formulário do rodapé enviar os dados preenchidos para o WhatsApp.
    - Trocar o mapa por link direto do Google Maps com o endereço real, sem depender de API externa no navegador.
+
+2. 2026-05-25 - Organização das pendências
+   - Separar pendências internas do projeto em `PENDENCIAS.md`.
+   - Criar `PENDENCIAS-PEDRO.md` para o que precisa ser pedido ou confirmado com o cliente.
+   - Registrar decisões atuais: manter imagem principal por enquanto, manter vídeo aprovado e manter mapa como link direto.
