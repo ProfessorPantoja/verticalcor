@@ -1,11 +1,11 @@
-# Modificacoes
+# Modificações
 
-Registro simples das alteracoes feitas no projeto.
+Registro simples das alterações editoriais/comerciais do site.
 
-1. 2026-05-25 - Atualizacao do lockfile do npm
-   - Commit: d2aa368.
-   - Removeu marcacoes `peer: true` geradas pelo npm no `package-lock.json`.
-
-2. 2026-05-25 - Limpeza de alteracoes pendentes por fim de linha
-   - Arquivos afetados: `README.md`, `components/SmartVideoPlayer.tsx`, `index.css` e `services/geminiService.ts`.
-   - Sem mudanca funcional de codigo; apenas diferenca de fim de linha que estava aparecendo no Git.
+1. 2026-05-25 - Contato real da Vertical Cor
+   - Adicionar endereço completo: Rua Paulo Cesar Lira, 106 - Alecrim, Vila Velha - ES, 29118-115, Brasil.
+   - Adicionar ponto de referência: Atrás do Supermercado Economia.
+   - Trocar todos os telefones fictícios pelo telefone real: (27) 99935-1626.
+   - Fazer botões e telefone abrirem o WhatsApp com mensagem do site: "Olá, vim do site da VERTICAL COR e quero mais informações."
+   - Fazer o formulário do rodapé enviar os dados preenchidos para o WhatsApp.
+   - Trocar o mapa por link direto do Google Maps com o endereço real, sem depender de API externa no navegador.

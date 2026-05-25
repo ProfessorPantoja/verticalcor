@@ -23,12 +23,15 @@ import MapSection from './components/MapSection';
 import { Reveal } from './components/Reveal';
 import { SmartVideoPlayer } from './components/SmartVideoPlayer';
 import { FAQItem } from './types';
+import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [formName, setFormName] = useState("");
+  const [formPhone, setFormPhone] = useState("");
 
   // Logos - Arquivos locais para maior confiabilidade
   const logoDarkBg = "/logo-dark-bg.png"; // Logo para fundo escuro (Branca/Azul)
@@ -49,8 +52,20 @@ function App() {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
 
-  const whatsappLink = "https://wa.me/5527999999999?text=Olá!%20Acessei%20o%20site%20da%20Vertical%20Cor%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
-  const whatsappFloatingButton = "https://wa.me/5527999351626?text=Olá!%20Acessei%20o%20site%20da%20Vertical%20Cor%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
+  const whatsappLink = buildWhatsAppLink();
+  const whatsappBudgetLink = buildWhatsAppLink("Olá, vim do site da VERTICAL COR e quero solicitar um orçamento.");
+
+  const handleContactSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const messageParts = [
+      SITE_CONTACT.defaultWhatsAppMessage,
+      formName.trim() ? `Nome: ${formName.trim()}` : "",
+      formPhone.trim() ? `Telefone informado: ${formPhone.trim()}` : ""
+    ].filter(Boolean);
+
+    window.open(buildWhatsAppLink(messageParts.join("\n")), "_blank", "noopener,noreferrer");
+  };
 
   const faqs: FAQItem[] = [
     { question: "Vocês cobram pelo orçamento?", answer: "Não! A visita técnica e o orçamento são 100% gratuitos em Vila Velha e região." },
@@ -105,7 +120,7 @@ function App() {
                   {item}
                 </a>
               ))}
-              <a href={whatsappFloatingButton} className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5 ${isHeaderSolid ? 'bg-cyan-600 text-white hover:bg-cyan-500' : 'bg-white text-navy-900 hover:bg-slate-100'}`}>
+              <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5 ${isHeaderSolid ? 'bg-cyan-600 text-white hover:bg-cyan-500' : 'bg-white text-navy-900 hover:bg-slate-100'}`}>
                 <Phone size={18} /> Orçamento
               </a>
             </nav>
@@ -129,7 +144,7 @@ function App() {
               <a href="#servicos" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 font-medium rounded-lg">Serviços</a>
               <a href="#portfolio" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 font-medium rounded-lg">Portfólio</a>
               <a href="#contato" onClick={() => setIsMenuOpen(false)} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 font-medium rounded-lg">Contato</a>
-              <a href={whatsappFloatingButton} className="block mt-4 text-center bg-cyan-600 text-white px-3 py-3 rounded-lg font-bold">
+              <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className="block mt-4 text-center bg-cyan-600 text-white px-3 py-3 rounded-lg font-bold">
                 Orçamento via WhatsApp
               </a>
             </div>
@@ -172,7 +187,7 @@ function App() {
 
           <Reveal delay={0.6}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={whatsappLink} className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(8,145,178,0.4)] flex items-center justify-center gap-2">
+              <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(8,145,178,0.4)] flex items-center justify-center gap-2">
                 <Building size={20} /> QUERO VALORIZAR MEU IMÓVEL
               </a>
             </div>
@@ -311,7 +326,7 @@ function App() {
                   Arraste para ver o resultado do Padrão Vertical Cor.
                 </p>
               </div>
-              <a href={whatsappLink} className="group whitespace-nowrap bg-transparent border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-navy-900 px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2">
+              <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className="group whitespace-nowrap bg-transparent border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-navy-900 px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2">
                 Quero esse resultado <Send size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -411,14 +426,14 @@ function App() {
                   Entre em contato hoje e receba uma visita técnica gratuita de um engenheiro ou técnico especializado.
                 </p>
 
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-4" onSubmit={handleContactSubmit}>
                   <div>
-                    <input type="text" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu nome completo" />
+                    <input type="text" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu nome completo" value={formName} onChange={(event) => setFormName(event.target.value)} />
                   </div>
                   <div>
-                    <input type="tel" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="(27) 99999-9999" />
+                    <input type="tel" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder={SITE_CONTACT.phoneDisplay} value={formPhone} onChange={(event) => setFormPhone(event.target.value)} />
                   </div>
-                  <button className="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-cyan-900/50">
+                  <button type="submit" className="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-cyan-900/50">
                     <Send size={20} /> SOLICITAR ORÇAMENTO
                   </button>
                 </form>
@@ -445,11 +460,11 @@ function App() {
                   </div>
 
                   <div className="space-y-6">
-                    <a href={whatsappLink} className="flex items-center gap-4 text-slate-300 hover:text-cyan-400 transition-colors group">
+                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-300 hover:text-cyan-400 transition-colors group">
                       <div className="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
                         <Phone size={20} />
                       </div>
-                      <span className="text-lg">(27) 99999-9999</span>
+                      <span className="text-lg">{SITE_CONTACT.phoneDisplay}</span>
                     </a>
 
                     <div className="flex items-center gap-4">
@@ -476,7 +491,7 @@ function App() {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href={whatsappFloatingButton}
+        href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20bd5a]"
