@@ -163,8 +163,11 @@ function App() {
             className="w-full h-full"
           >
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              src="/hero-predial.webp"
               alt="Fachada Predial Moderna"
+              width={1920}
+              height={1280}
+              fetchPriority="high"
               className="w-full h-full object-cover"
             />
           </motion.div>
