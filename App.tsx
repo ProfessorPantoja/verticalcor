@@ -505,7 +505,7 @@ function App() {
           </div>
 
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-            <p>© 2026 Vertical Cor. Todos os direitos reservados.</p>
+            <p>© {new Date().getFullYear()} Vertical Cor. Todos os direitos reservados.</p>
             <div className="mt-4 md:mt-0 flex gap-6">
               <a href="/politica-de-privacidade.html" className="hover:text-cyan-400 transition-colors">Política de Privacidade</a>
               <a href="/termos-de-uso.html" className="hover:text-cyan-400 transition-colors">Termos de Uso</a>
