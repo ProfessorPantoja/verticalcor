@@ -46,6 +46,8 @@ export const SmartVideoPlayer: React.FC<SmartVideoPlayerProps> = ({ videoId }) =
             });
         };
 
+        let checkYT: ReturnType<typeof setInterval> | undefined;
+
         if (!window.YT) {
             if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
                 const tag = document.createElement('script');
@@ -59,17 +61,25 @@ export const SmartVideoPlayer: React.FC<SmartVideoPlayerProps> = ({ videoId }) =
             } else {
                 // Se o script já existe, verificamos periodicamente ou hookamos no evento se possível
                 // Simplificação segura: tentar init se YT já existir, senão aguardar
-                const checkYT = setInterval(() => {
+                checkYT = setInterval(() => {
                     if (window.YT && window.YT.Player) {
-                        clearInterval(checkYT);
+                        if (checkYT) clearInterval(checkYT);
                         initPlayer();
                     }
                 }, 100);
-                return () => clearInterval(checkYT);
             }
         } else {
             initPlayer();
         }
+
+        // Limpeza: encerra o polling e destrói o player ao desmontar
+        return () => {
+            if (checkYT) clearInterval(checkYT);
+            if (playerInstance.current && typeof playerInstance.current.destroy === 'function') {
+                playerInstance.current.destroy();
+            }
+            playerInstance.current = null;
+        };
     }, [videoId]);
 
     const onPlayerReady = (event: any) => {
@@ -121,9 +131,18 @@ export const SmartVideoPlayer: React.FC<SmartVideoPlayerProps> = ({ videoId }) =
     }, [isPlayerReady, isInView]);
 
     return (
-        <div ref={wrapperRef} className="w-full h-full">
+        <div ref={wrapperRef} className="relative w-full h-full">
             {/* O YouTube substituirá esta div pelo iframe, mas o wrapperRef permanece para o Observer */}
             <div ref={playerDivRef} className="w-full h-full rounded-2xl" />
+
+            {/* Poster exibido enquanto a API do YouTube carrega */}
+            {!isPlayerReady && (
+                <img
+                    src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                    alt="Prévia do vídeo da Vertical Cor"
+                    className="absolute inset-0 w-full h-full object-cover rounded-2xl pointer-events-none"
+                />
+            )}
         </div>
     );
 };

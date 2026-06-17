@@ -9,7 +9,21 @@ interface BeforeAfterSliderProps {
 const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afterImage }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isResizing, setIsResizing] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Mantém a largura do container em estado, atualizando em resize/rotação de tela
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+
+    const updateWidth = () => setContainerWidth(element.offsetWidth);
+    updateWidth();
+
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseDown = () => setIsResizing(true);
   const handleMouseUp = () => setIsResizing(false);
@@ -47,8 +61,9 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
   }, [isResizing]);
 
   return (
-    <div 
+    <div
       className="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl select-none cursor-ew-resize group"
+      style={{ touchAction: 'none' }}
       ref={containerRef}
       onMouseDown={handleMouseDown}
       onTouchMove={handleTouchMove}
@@ -69,11 +84,11 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
         className="absolute top-0 left-0 h-full w-full overflow-hidden"
         style={{ width: `${sliderPosition}%` }}
       >
-        <img 
-          src={beforeImage} 
-          alt="Antes" 
-          className="absolute top-0 left-0 h-full w-full object-cover max-w-none" 
-          style={{ width: containerRef.current?.offsetWidth }}
+        <img
+          src={beforeImage}
+          alt="Antes"
+          className="absolute top-0 left-0 h-full w-full object-cover max-w-none"
+          style={{ width: containerWidth || '100%' }}
         />
         <div className={`absolute top-4 left-4 bg-gray-900/80 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm z-10 transition-opacity duration-300 ${sliderPosition < 7 ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           ANTES
