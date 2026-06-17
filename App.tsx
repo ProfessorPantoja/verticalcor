@@ -32,6 +32,7 @@ function App() {
   const [logoError, setLogoError] = useState(false);
   const [formName, setFormName] = useState("");
   const [formPhone, setFormPhone] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   // Logos - Arquivos locais para maior confiabilidade
   const logoDarkBg = "/logo-dark-bg.png"; // Logo para fundo escuro (Branca/Azul)
@@ -65,6 +66,7 @@ function App() {
     ].filter(Boolean);
 
     window.open(buildWhatsAppLink(messageParts.join("\n")), "_blank", "noopener,noreferrer");
+    setFormSubmitted(true);
   };
 
   const faqs: FAQItem[] = [
@@ -126,7 +128,13 @@ function App() {
             </nav>
 
             {/* Mobile Menu Button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`md:hidden ${isHeaderSolid ? 'text-navy-900' : 'text-white'}`}>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`md:hidden ${isHeaderSolid ? 'text-navy-900' : 'text-white'}`}
+              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -135,6 +143,7 @@ function App() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             className="md:hidden bg-white border-b border-slate-100 absolute w-full shadow-xl top-full left-0"
@@ -393,12 +402,18 @@ function App() {
                   <button
                     className="w-full flex justify-between items-center p-6 bg-slate-50 hover:bg-slate-100 transition-colors text-left"
                     onClick={() => toggleAccordion(index)}
+                    aria-expanded={activeAccordion === index}
+                    aria-controls={`faq-panel-${index}`}
+                    id={`faq-button-${index}`}
                   >
                     <span className="font-bold text-navy-900 text-lg">{faq.question}</span>
                     {activeAccordion === index ? <ChevronUp className="text-cyan-600" /> : <ChevronDown className="text-slate-400" />}
                   </button>
                   {activeAccordion === index && (
                     <motion.div
+                      id={`faq-panel-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-button-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       className="p-6 bg-white text-slate-600 border-t border-slate-200 leading-relaxed"
@@ -431,14 +446,21 @@ function App() {
 
                 <form className="space-y-4" onSubmit={handleContactSubmit}>
                   <div>
-                    <input type="text" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu nome completo" value={formName} onChange={(event) => setFormName(event.target.value)} />
+                    <label htmlFor="form-name" className="sr-only">Seu nome completo</label>
+                    <input id="form-name" name="name" type="text" autoComplete="name" aria-label="Seu nome completo" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu nome completo" value={formName} onChange={(event) => setFormName(event.target.value)} />
                   </div>
                   <div>
-                    <input type="tel" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder={SITE_CONTACT.phoneDisplay} value={formPhone} onChange={(event) => setFormPhone(event.target.value)} />
+                    <label htmlFor="form-phone" className="sr-only">Seu telefone</label>
+                    <input id="form-phone" name="phone" type="tel" autoComplete="tel" required aria-label="Seu telefone" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder={SITE_CONTACT.phoneDisplay} value={formPhone} onChange={(event) => setFormPhone(event.target.value)} />
                   </div>
                   <button type="submit" className="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-cyan-900/50">
                     <Send size={20} /> SOLICITAR ORÇAMENTO
                   </button>
+                  {formSubmitted && (
+                    <p role="status" className="text-green-400 text-sm text-center pt-1">
+                      Abrimos o WhatsApp para você concluir o envio. Se não abriu, fale conosco pelo botão verde no canto da tela.
+                    </p>
+                  )}
                 </form>
               </div>
             </Reveal>
