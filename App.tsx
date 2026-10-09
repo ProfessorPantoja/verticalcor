@@ -266,7 +266,7 @@ function App() {
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Desvalorização</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
-                  Pintura descascada e suja reduz em até <span className="font-bold text-red-500">20%</span> o valor de venda ou aluguel.
+                  Pintura descascada e suja derruba o valor de venda e de aluguel do imóvel.
                 </p>
               </div>
             </Reveal>
@@ -462,7 +462,7 @@ function App() {
                     align="left"
                     eyebrow="Orçamento"
                     title="Pronto para transformar seu imóvel?"
-                    subtitle="Entre em contato hoje e receba uma visita técnica gratuita de um engenheiro ou técnico especializado."
+                    subtitle="Entre em contato hoje e receba uma visita técnica gratuita de um profissional especializado."
                   />
                 </div>
 
@@ -530,13 +530,6 @@ function App() {
                       </div>
                       <span className="text-lg">Ligar agora</span>
                     </a>
-
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                        <div className="w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-                      </div>
-                      <span className="text-green-400 font-medium">Equipes disponíveis para início imediato</span>
-                    </div>
 
                   </div>
                 </div>
