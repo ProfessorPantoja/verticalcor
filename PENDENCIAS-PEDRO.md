@@ -35,5 +35,5 @@ Lista do que precisa ser confirmado, pedido ou validado diretamente com o client
 7. Antes/depois "real" (2026-10-09, refino)
    - Os 3 revisores acharam que as imagens parecem geradas. Confirmar que são de obra do Pedro; se não forem, tirar a palavra "real" da legenda.
 
-8. Afirmações retiradas no refino (2026-10-09)
-   - "Reduz em até 20% o valor" (sem fonte), "engenheiro" e "equipes para início imediato". Voltam se o Pedro confirmar.
+8. Afirmações sem fonte apontadas pelos revisores (2026-10-09)
+   - "Reduz em até 20% o valor" e "equipes para início imediato". Ficam no site (decisão do Fábio); só conferir com o Pedro.
