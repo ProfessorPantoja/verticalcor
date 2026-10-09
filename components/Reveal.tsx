@@ -8,6 +8,7 @@ interface RevealProps {
   fullHeight?: boolean; // estica até a altura da linha do grid (cards do mesmo tamanho)
 }
 
+// Sem overflow escondido: a sombra e o "levantar" dos cards no hover não ficam cortados
 export const Reveal: React.FC<RevealProps> = ({ children, width = "100%", delay = 0.25, fullHeight = false }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -20,7 +21,7 @@ export const Reveal: React.FC<RevealProps> = ({ children, width = "100%", delay 
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden", height: fullHeight ? "100%" : undefined }}>
+    <div ref={ref} style={{ position: "relative", width, height: fullHeight ? "100%" : undefined }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
