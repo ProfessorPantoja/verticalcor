@@ -22,6 +22,7 @@ import BeforeAfterSlider from './components/BeforeAfterSlider';
 import MapSection from './components/MapSection';
 import { Reveal } from './components/Reveal';
 import { SmartVideoPlayer } from './components/SmartVideoPlayer';
+import { WhatsAppIcon } from './components/WhatsAppIcon';
 import { FAQItem } from './types';
 import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
@@ -34,9 +35,9 @@ function App() {
   const [formPhone, setFormPhone] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  // Logos - Arquivos locais para maior confiabilidade
-  const logoDarkBg = "/logo-dark-bg.png"; // Logo para fundo escuro (Branca/Azul)
-  const logoLightBg = "/logo-light-bg.jpg"; // Logo para fundo claro (Azul/Escura)
+  // Símbolo da marca (só o "V", fundo transparente); o nome vai em texto ao lado
+  const simboloFundoEscuro = "/simbolo-vertical-cor-branco.png"; // V branco + fita ciano
+  const simboloFundoClaro = "/simbolo-vertical-cor.png"; // V marinho + fita ciano
 
   // Determine if header should be solid (scrolled OR menu open)
   const isHeaderSolid = isScrolled || isMenuOpen;
@@ -88,13 +89,15 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo Dinâmica */}
-            <div className="flex items-center gap-3 group cursor-pointer">
+            <a href="#inicio" className="flex items-center gap-3 group" aria-label="Vertical Cor, voltar ao início">
               <motion.div whileHover={{ scale: 1.05 }} className="relative">
                 {!logoError ? (
                   <img
-                    src={isHeaderSolid ? logoLightBg : logoDarkBg}
-                    alt="Vertical Cor Logo"
-                    className="h-10 w-auto md:h-12 object-contain transition-all duration-300 block"
+                    src={isHeaderSolid ? simboloFundoClaro : simboloFundoEscuro}
+                    alt=""
+                    width={52}
+                    height={46}
+                    className="h-10 w-auto md:h-11 object-contain transition-all duration-300 block"
                     onError={() => setLogoError(true)}
                   />
                 ) : (
@@ -105,11 +108,11 @@ function App() {
                 )}
               </motion.div>
 
-              <div className={`flex flex-col ${isHeaderSolid ? 'opacity-100' : 'opacity-0 md:opacity-100'} transition-opacity duration-300`}>
+              <div className="flex flex-col">
                 <span className={`text-xl font-bold tracking-tight leading-none ${isHeaderSolid ? 'text-navy-900' : 'text-white'}`}>VERTICAL</span>
                 <span className={`text-sm font-light tracking-widest ${isHeaderSolid ? 'text-cyan-600' : 'text-cyan-400'}`}>COR</span>
               </div>
-            </div>
+            </a>
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex space-x-8 items-center">
@@ -123,14 +126,14 @@ function App() {
                 </a>
               ))}
               <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className={`px-6 py-2.5 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/25 transform hover:-translate-y-0.5 ${isHeaderSolid ? 'bg-cyan-600 text-white hover:bg-cyan-500' : 'bg-white text-navy-900 hover:bg-slate-100'}`}>
-                <Phone size={18} /> Orçamento
+                <WhatsAppIcon size={18} /> Orçamento
               </a>
             </nav>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden ${isHeaderSolid ? 'text-navy-900' : 'text-white'}`}
+              className={`md:hidden p-2 -mr-2 ${isHeaderSolid ? 'text-navy-900' : 'text-white'}`}
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -471,7 +474,7 @@ function App() {
                 <div>
                   <div className="flex items-center gap-4 mb-8">
                     {!logoError ? (
-                      <img src={logoDarkBg} alt="Vertical Cor" className="h-12 w-auto object-contain" onError={() => setLogoError(true)} />
+                      <img src={simboloFundoEscuro} alt="Vertical Cor" width={54} height={48} className="h-12 w-auto object-contain" onError={() => setLogoError(true)} />
                     ) : (
                       <div className="h-10 w-10 bg-white rounded-lg flex items-center justify-center font-bold text-navy-900">V</div>
                     )}
