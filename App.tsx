@@ -7,13 +7,17 @@ import {
   ShieldAlert,
   Eye,
   TrendingDown,
-  CheckCircle2,
   Brush,
   Building2,
   DoorOpen,
   ChevronDown,
   ChevronUp,
   Wrench,
+  Sparkles,
+  CalendarCheck,
+  PaintRoller,
+  ReceiptText,
+  ArrowRight,
   Send
 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -22,6 +26,7 @@ import MapSection from './components/MapSection';
 import { Reveal } from './components/Reveal';
 import { SmartVideoPlayer } from './components/SmartVideoPlayer';
 import { WhatsAppIcon } from './components/WhatsAppIcon';
+import { SectionHeading } from './components/SectionHeading';
 import { FAQItem } from './types';
 import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
@@ -224,11 +229,12 @@ function App() {
       <section className="py-20 bg-white relative z-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-navy-900 mb-4">Qualidade que valoriza seu imóvel</h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Assista ao vídeo e veja como nosso processo de pintura predial transforma e protege seu patrimônio com excelência.
-              </p>
+            <div className="mb-12">
+              <SectionHeading
+                eyebrow="Na prática"
+                title="Qualidade que valoriza seu imóvel"
+                subtitle="Assista ao vídeo e veja como nosso processo de pintura predial transforma e protege seu patrimônio com excelência."
+              />
             </div>
           </Reveal>
 
@@ -243,17 +249,16 @@ function App() {
       {/* 3. Seção da Dor (Cards flutuantes) */}
       <section className="py-24 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="mb-16">
             <Reveal>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Sinais de que seu imóvel pede socorro</h2>
-              <div className="w-24 h-1.5 bg-cyan-500 mx-auto rounded-full"></div>
+              <SectionHeading eyebrow="O custo de esperar" title="Sinais de que seu imóvel pede socorro" />
             </Reveal>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Reveal delay={0.2}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-red-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 mb-6 mx-auto rotate-3">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
+                <div className="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
                   <TrendingDown size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Desvalorização</h3>
@@ -264,8 +269,8 @@ function App() {
             </Reveal>
 
             <Reveal delay={0.4}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-amber-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-500 mb-6 mx-auto -rotate-3">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
+                <div className="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto -rotate-3">
                   <ShieldAlert size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Infiltrações</h3>
@@ -276,8 +281,8 @@ function App() {
             </Reveal>
 
             <Reveal delay={0.6}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-slate-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-600 mb-6 mx-auto rotate-3">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
+                <div className="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
                   <Eye size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Má Impressão</h3>
@@ -292,19 +297,15 @@ function App() {
 
       {/* 4. A Solução (Services) */}
       <section id="servicos" className="py-24 bg-white relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 skew-x-12 translate-x-20 z-0"></div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal>
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-              <div>
-                <span className="text-cyan-600 font-bold tracking-widest uppercase text-sm mb-2 block">Nossa Expertise</span>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-navy-900">Acabamento Fino e <br />Proteção Duradoura</h2>
-              </div>
-              <p className="text-slate-500 max-w-md pb-2">
-                Utilizamos técnicas avançadas e materiais de alta performance para garantir durabilidade extrema.
-              </p>
+            <div className="mb-16">
+              <SectionHeading
+                align="left"
+                eyebrow="Nossa expertise"
+                title={<>Acabamento fino e <br />proteção duradoura</>}
+                subtitle="Utilizamos técnicas avançadas e materiais de alta performance para garantir durabilidade extrema."
+              />
             </div>
           </Reveal>
 
@@ -316,16 +317,24 @@ function App() {
               { icon: DoorOpen, title: "Acabamentos Especiais", desc: "Verniz em madeiras e pintura de portas." }
             ].map((service, idx) => (
               <Reveal key={idx} delay={idx * 0.1}>
-                <div className="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-cyan-200 transition-all duration-300 cursor-default">
+                <div className="group h-full p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-200 transition-all duration-300">
                   <div className="bg-navy-900 text-cyan-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all">
                     <service.icon size={28} />
                   </div>
                   <h3 className="text-xl font-bold text-navy-900 mb-3">{service.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{service.desc}</p>
+                  <p className="text-slate-600 leading-relaxed">{service.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={0.2}>
+            <div className="mt-12 flex justify-center">
+              <a href={buildWhatsAppLink("Olá, vim do site da VERTICAL COR e quero o orçamento de um serviço.")} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 font-bold text-cyan-700 hover:text-cyan-600">
+                Pedir orçamento de um serviço <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -336,12 +345,13 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal>
             <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
-              <div className="max-w-xl">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">Veja a Transformação</h2>
-                <p className="text-slate-300 text-lg">
-                  Arraste para ver o resultado do Padrão Vertical Cor.
-                </p>
-              </div>
+              <SectionHeading
+                dark
+                align="left"
+                eyebrow="Resultado"
+                title="Veja a transformação"
+                subtitle="Arraste para ver o resultado do Padrão Vertical Cor."
+              />
               <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className="group whitespace-nowrap bg-transparent border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-navy-900 px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2">
                 Quero esse resultado <Send size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
@@ -363,23 +373,23 @@ function App() {
       {/* 6. Prova Social e Autoridade */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="mb-16">
             <Reveal>
-              <h2 className="text-3xl font-bold text-navy-900">Por que escolher a Vertical Cor?</h2>
+              <SectionHeading eyebrow="Diferenciais" title="Por que escolher a Vertical Cor?" />
             </Reveal>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
-              { title: "Limpeza Extrema", text: "Protegemos seu piso e móveis. Entregamos a obra limpa." },
-              { title: "Prazo Garantido", text: "Cronograma seguido à risca." },
-              { title: "Materiais Premium", text: "Só trabalhamos com tintas e insumos de primeira linha." },
-              { title: "Orçamento Transparente", text: "Sem surpresas no final da obra." }
+              { icon: Sparkles, title: "Limpeza Extrema", text: "Protegemos seu piso e móveis. Entregamos a obra limpa." },
+              { icon: CalendarCheck, title: "Prazo Garantido", text: "Cronograma seguido à risca." },
+              { icon: PaintRoller, title: "Materiais Premium", text: "Só trabalhamos com tintas e insumos de primeira linha." },
+              { icon: ReceiptText, title: "Orçamento Transparente", text: "Sem surpresas no final da obra." }
             ].map((item, i) => (
               <Reveal key={i} delay={i * 0.1}>
                 <div className="flex flex-col items-center text-center group">
                   <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center text-cyan-600 mb-6 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
-                    <CheckCircle2 size={36} />
+                    <item.icon size={34} />
                   </div>
                   <h3 className="font-bold text-xl mb-3 text-navy-900">{item.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{item.text}</p>
@@ -394,8 +404,8 @@ function App() {
       <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-navy-900">Dúvidas Frequentes</h2>
+            <div className="mb-12">
+              <SectionHeading eyebrow="Dúvidas" title="Perguntas frequentes" />
             </div>
           </Reveal>
 
@@ -443,10 +453,15 @@ function App() {
             {/* Left: CTA & Form */}
             <Reveal>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Pronto para transformar seu imóvel?</h2>
-                <p className="mb-10 text-slate-400 text-lg">
-                  Entre em contato hoje e receba uma visita técnica gratuita de um profissional especializado.
-                </p>
+                <div className="mb-10">
+                  <SectionHeading
+                    dark
+                    align="left"
+                    eyebrow="Orçamento"
+                    title="Pronto para transformar seu imóvel?"
+                    subtitle="Entre em contato hoje e receba uma visita técnica gratuita de um profissional especializado."
+                  />
+                </div>
 
                 <form className="space-y-4" onSubmit={handleContactSubmit}>
                   <div>
