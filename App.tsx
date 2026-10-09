@@ -433,7 +433,7 @@ function App() {
       </section>
 
       {/* 8. Footer (Conversion + Map) */}
-      <footer id="contato" className="bg-navy-900 text-slate-300 pt-24 pb-10 relative overflow-hidden">
+      <footer id="contato" className="bg-navy-900 text-slate-300 pt-24 pb-24 md:pb-10 relative overflow-hidden">
         {/* Decorative Blob */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -523,14 +523,14 @@ function App() {
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20bd5a]"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20bd5a]"
         aria-label="Fale conosco no WhatsApp"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1, rotate: 10 }}
         whileTap={{ scale: 0.9 }}
       >
-        <Phone size={32} fill="white" />
+        <WhatsAppIcon size={30} />
       </motion.a>
     </div>
   );
