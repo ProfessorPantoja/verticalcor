@@ -26,3 +26,14 @@ Lista do que precisa ser confirmado, pedido ou validado diretamente com o client
    - Decidir se o site continuará na Vercel ou se será publicado em outro lugar.
    - Definir domínio próprio, se houver.
    - Verificar se o cliente quer foco em busca orgânica no Google.
+
+6. Vídeo do site (2026-10-09, refino)
+   - A legenda dentro do vídeo diz "A Vertical Core" (falta corrigir para "Cor").
+   - O título no YouTube tem erro de digitação e o vídeo está no canal pessoal do Fábio.
+   - Pedir autorização para subir a versão corrigida num canal da Vertical Cor.
+
+7. Antes/depois "real" (2026-10-09, refino)
+   - Os 3 revisores acharam que as imagens parecem geradas. Confirmar que são de obra do Pedro; se não forem, tirar a palavra "real" da legenda.
+
+8. Afirmações retiradas no refino (2026-10-09)
+   - "Reduz em até 20% o valor" (sem fonte), "engenheiro" e "equipes para início imediato". Voltam se o Pedro confirmar.

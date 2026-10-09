@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refino Vertical Cor</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f172a;--ciano:#0891b2;--ciano-claro:#22d3ee;--fundo:#f8fafc;--texto:#334155;--linha:#e2e8f0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:Inter,sans-serif;line-height:1.55}
+main{max-width:980px;margin:0 auto;padding:32px 16px 64px}
+h1{color:var(--navy);font-size:2rem;margin:0 0 4px}
+h2{color:var(--navy);font-size:1.25rem;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--linha)}
+.sub{color:#64748b;margin:0 0 24px}
+.resumo{background:var(--navy);color:#e2e8f0;border-radius:14px;padding:20px 22px}
+.resumo p{margin:6px 0}.resumo b{color:var(--ciano-claro)}
+.link{display:inline-block;margin-top:10px;background:var(--ciano);color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--linha);border-radius:10px;overflow:hidden;font-size:.94rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--linha);vertical-align:top}
+th{background:#f1f5f9;color:var(--navy)}
+code{background:#f1f5f9;padding:1px 6px;border-radius:5px;font-size:.9em}
+.ok{color:#047857;font-weight:700}.esp{color:#b45309;font-weight:700}
+.cor{display:inline-block;width:22px;height:22px;border-radius:6px;border:1px solid #cbd5e1;vertical-align:middle;margin-right:8px}
+.fotos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.fotos figure{margin:0;background:#fff;border:1px solid var(--linha);border-radius:10px;padding:8px}
+.fotos img{width:100%;border-radius:6px;display:block}
+.fotos figcaption{font-size:.85rem;color:#64748b;margin-top:6px}
+.cel{display:grid;grid-template-columns:repeat(2,minmax(0,220px));gap:14px}
+ol li,ul li{margin:4px 0}
+.ass{margin-top:48px;color:#64748b;font-size:.9rem}
+@media (max-width:640px){.fotos{grid-template-columns:1fr}table{font-size:.85rem}}
+</style>
+</head>
+<body>
+<main>
+<h1>Refino do site Vertical Cor</h1>
+<p class="sub">2026-10-09 · ramo <code>refino</code> · prévia na Vercel (produção intacta)</p>
+
+<div class="resumo">
+<p><b>Decisão:</b> aprovar a prévia para ir ao ar e decidir 3 pontos que dependem do Pedro (fotos, vídeo, foto do topo).</p>
+<p><b>Recomendação:</b> publicar o refino já; o vídeo com "Vertical Core" e o canal pessoal é o ponto mais urgente fora do código.</p>
+<p><b>Confiança:</b> alta no que mudou (testado no computador e no celular); média em quanto a nota sobe sem fotos reais.</p>
+<p><b>Próximo passo:</b> com o seu sim, publico em produção e junto o ramo <code>refino</code> ao <code>main</code>.</p>
+<a class="link" href="https://verticalcor-qp1kn5ub9-fabios-projects-541abd8c.vercel.app">Abrir a prévia</a>
+</div>
+
+<h2>O que precisa de você (fora do código)</h2>
+<table>
+<tr><th>Ponto</th><th>Quem apontou</th><th>O que fazer</th></tr>
+<tr><td><b>Vídeo</b>: legenda "A Vertical <u>Core</u>", título com erro de digitação, canal "Fabio Pantoja – ChatGPT e IA" e selo Veo à mostra</td><td>3 de 3</td><td>Corrigir o texto e subir num canal da Vertical Cor; me passar o novo link (troca de 1 linha)</td></tr>
+<tr><td><b>Antes/depois</b>: legenda diz "real", os 3 revisores acharam que parece imagem gerada</td><td>3 de 3</td><td>Confirmar com o Pedro. Se não for obra dele, trocar a palavra "real" (o registro de maio diz que foi ele quem mandou)</td></tr>
+<tr><td><b>Foto do topo</b>: arranha-céu de vidro, não mostra pintura</td><td>3 de 3</td><td>Mantida (decisão anterior). Trocar quando houver foto de fachada pintada ou equipe no balancim</td></tr>
+<tr><td><b>Prova</b>: só uma obra no portfólio, nenhum depoimento</td><td>3 de 3</td><td>Pedir ao Pedro de 3 a 6 obras e depoimentos (já está em <code>PENDENCIAS-PEDRO.md</code>)</td></tr>
+</table>
+
+<h2>O que foi aplicado (2 de 3 revisores ou mais)</h2>
+<table>
+<tr><th>#</th><th>Mudança</th><th>Votos</th><th>Commit</th></tr>
+<tr><td>1</td><td>Logo: só o "V" com fundo transparente (versões marinho e branca, ~35 KB contra 889 KB); nome visível no celular; favicon, ícone de celular e imagem de compartilhamento 1200×630</td><td>3</td><td><code>cb6bb5a</code></td></tr>
+<tr><td>2</td><td>Topo: texto alinhado à grade, degradê de contraste, botão "Pedir orçamento grátis" em uma linha, seta só no computador</td><td>3</td><td><code>72e87ba</code></td></tr>
+<tr><td>3</td><td>Botão flutuante com o ícone do WhatsApp e sem cobrir o rodapé</td><td>3</td><td><code>b954ee9</code></td></tr>
+<tr><td>4</td><td>Tiradas afirmações sem confirmação: "20%", "engenheiro", "início imediato"</td><td>3</td><td><code>c4dc755</code></td></tr>
+<tr><td>5</td><td>Padrão único de título de seção; cards da "dor" nas cores da marca; serviços sem a faixa diagonal, cards iguais, link de orçamento; um ícone por diferencial</td><td>2–3</td><td><code>b9b3f96</code> <code>157566c</code></td></tr>
+<tr><td>6</td><td>Antes/depois: não trava a rolagem no celular, aceita toque e teclado, não corta a foto; textura de fundo sem site externo</td><td>2</td><td><code>48323bc</code></td></tr>
+<tr><td>7</td><td>Formulário: exemplo de telefone neutro, campo "Tipo de imóvel", botão "Pedir orçamento pelo WhatsApp", mais contraste; link "Ligar agora"</td><td>3</td><td><code>df4b486</code></td></tr>
+<tr><td>8</td><td>Menu não esconde o título ao pular de seção; 1ª pergunta aberta; respeita "reduzir movimento"</td><td>2</td><td><code>d9a1f6e</code></td></tr>
+<tr><td>9</td><td>Títulos em peso 700 com quebra equilibrada (no 800 as letras encostavam)</td><td>conferência do Opus</td><td><code>7997bb9</code></td></tr>
+</table>
+<p>Ficou de fora (só 1 revisor): cartão branco do endereço no rodapé, mapa embutido, mudar o tom <code>navy-800</code>, mais perguntas no FAQ, frase de confiança sob o botão do topo.</p>
+
+<h2>Antes × depois</h2>
+<div class="fotos">
+<figure><img src="antes/pc-01.jpg" alt="Topo antes"><figcaption>Antes · computador</figcaption></figure>
+<figure><img src="depois/pc-01.jpg" alt="Topo depois"><figcaption>Depois · computador</figcaption></figure>
+<figure><img src="antes/pc-03.jpg" alt="Seções antes"><figcaption>Antes · "dor" e serviços</figcaption></figure>
+<figure><img src="depois/pc-03.jpg" alt="Seções depois"><figcaption>Depois · "dor" e serviços</figcaption></figure>
+</div>
+<div class="cel" style="margin-top:14px">
+<figure style="margin:0"><img src="antes/cel-01.jpg" alt="Celular antes" style="width:100%;border-radius:8px"><figcaption style="font-size:.85rem;color:#64748b">Antes · celular</figcaption></figure>
+<figure style="margin:0"><img src="depois/cel-01.jpg" alt="Celular depois" style="width:100%;border-radius:8px"><figcaption style="font-size:.85rem;color:#64748b">Depois · celular</figcaption></figure>
+</div>
+<p>Todas as telas: pastas <code>antes/</code> e <code>depois/</code>.</p>
+
+<h2>Cores (códigos para o manual)</h2>
+<table>
+<tr><th>Nome</th><th>Código</th><th>Onde aparece</th></tr>
+<tr><td><span class="cor" style="background:#0f172a"></span>Marinho (principal)</td><td><code>#0F172A</code></td><td>Títulos, fundos escuros, topo rolado</td></tr>
+<tr><td><span class="cor" style="background:#1e3a8a"></span>Azul profundo</td><td><code>#1E3A8A</code></td><td>Moldura do antes/depois</td></tr>
+<tr><td><span class="cor" style="background:#0891b2"></span>Ciano 600 (ação)</td><td><code>#0891B2</code></td><td>Botões, chamadas, foco</td></tr>
+<tr><td><span class="cor" style="background:#06b6d4"></span>Ciano 500</td><td><code>#06B6D4</code></td><td>Barras, bordas de destaque, puxador</td></tr>
+<tr><td><span class="cor" style="background:#22d3ee"></span>Ciano 400</td><td><code>#22D3EE</code></td><td>Destaques sobre fundo escuro</td></tr>
+<tr><td><span class="cor" style="background:#a5f3fc"></span>Ciano 200</td><td><code>#A5F3FC</code></td><td>Fim do degradê do título principal</td></tr>
+<tr><td><span class="cor" style="background:#0e7490"></span>Ciano 700</td><td><code>#0E7490</code></td><td>Link de texto sobre branco</td></tr>
+<tr><td><span class="cor" style="background:#f8fafc"></span>Fundo claro</td><td><code>#F8FAFC</code></td><td>Seções alternadas</td></tr>
+<tr><td><span class="cor" style="background:#475569"></span>Texto</td><td><code>#475569</code></td><td>Parágrafos sobre claro</td></tr>
+<tr><td><span class="cor" style="background:#cbd5e1"></span>Texto sobre escuro</td><td><code>#CBD5E1</code> / <code>#94A3B8</code></td><td>Subtítulos / textos pequenos no marinho</td></tr>
+<tr><td><span class="cor" style="background:#e2e8f0"></span>Linhas</td><td><code>#E2E8F0</code></td><td>Bordas de cards e FAQ</td></tr>
+<tr><td><span class="cor" style="background:#25d366"></span>WhatsApp</td><td><code>#25D366</code> (hover <code>#20BD5A</code>)</td><td>Só o botão flutuante</td></tr>
+</table>
+<p><b>Cores medidas na logo</b> (amostra do arquivo; arredondar no manual): V marinho <code>#25456B</code> → <code>#232F45</code> (degradê) · fita ciano clara <code>#41CFE5</code> · média <code>#2CB6DB</code> · escura <code>#1F8AC4</code> · fundo da logo escura <code>#22364F</code> · fundo da logo clara <code>#DEECEF</code>.</p>
+
+<h2>Letras</h2>
+<table>
+<tr><th>Uso</th><th>Fonte</th><th>Peso</th></tr>
+<tr><td>Título principal (topo)</td><td>Inter</td><td>800 (ExtraBold), entrelinha 1,1</td></tr>
+<tr><td>Títulos de seção</td><td>Inter</td><td>700 (Bold), 30 px celular / 48 px computador</td></tr>
+<tr><td>Chamada acima do título</td><td>Inter</td><td>700, maiúsculas, 14 px, espaçamento largo</td></tr>
+<tr><td>Botões e títulos de card</td><td>Inter</td><td>700</td></tr>
+<tr><td>Texto corrido</td><td>Inter</td><td>400, 16–18 px</td></tr>
+<tr><td>"COR" ao lado do símbolo</td><td>Inter</td><td>300 (Light), espaçamento largo</td></tr>
+</table>
+<p>A palavra "VERTICAL COR" desenhada dentro da logo original usa outra letra (geométrica, sem arquivo de fonte). Para o manual: ou adotar Inter no nome, ou identificar/escolher essa fonte.</p>
+
+<h2>Checklist de teste (na prévia)</h2>
+<ol>
+<li>Celular: role a página com o dedo por cima da foto do antes/depois → a página rola normalmente.</li>
+<li>Celular: arraste para o lado em cima da foto → a barra acompanha o dedo.</li>
+<li>Preencha o formulário com tipo "Casa" e envie → o WhatsApp abre com nome, telefone e tipo de imóvel.</li>
+<li>Toque em "Ligar agora" → o celular oferece ligar para (27) 99935-1626.</li>
+<li>Menu → "Contato" → o título "Pronto para transformar seu imóvel?" aparece inteiro, sem ficar sob o topo.</li>
+<li>Veja o fim da página no celular → o botão verde não cobre "Termos de Uso".</li>
+</ol>
+<p>Não precisa testar: páginas de Política e Termos (só mudou o ícone da aba) e o computador em geral (conferido por capturas).</p>
+
+<p class="ass">Revisores: Lia, Caio e Bruno (Sonnet 5.5, contexto limpo; prompt em <code>prompt-revisores.md</code>). Nota de cada um para o site antigo: 5,5.<br>Feito por: Opus 5.5</p>
+</main>
+</body>
+</html>
