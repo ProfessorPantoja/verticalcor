@@ -14,6 +14,13 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px; /* âncoras do menu não ficam sob o cabeçalho fixo */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Body base styles */

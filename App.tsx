@@ -20,7 +20,7 @@ import {
   ArrowRight,
   Send
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, MotionConfig } from 'framer-motion';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import MapSection from './components/MapSection';
 import { Reveal } from './components/Reveal';
@@ -32,7 +32,7 @@ import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const [activeAccordion, setActiveAccordion] = useState<number | null>(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const [formName, setFormName] = useState("");
@@ -84,6 +84,7 @@ function App() {
   ];
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="min-h-screen flex flex-col font-sans">
       {/* 1. Header Inteligente (Animation Premium) */}
       <motion.header
@@ -561,6 +562,7 @@ function App() {
         <WhatsAppIcon size={30} />
       </motion.a>
     </div>
+    </MotionConfig>
   );
 }
 
