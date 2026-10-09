@@ -301,7 +301,7 @@ function App() {
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Má Impressão</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
-                  O que seus clientes ou visitas pensam ao ver sua fachada mal cuidada?
+                  O que seus clientes ou visitas pensam ao ver sua fachada malcuidada?
                 </p>
               </Spotlight>
             </Reveal>
@@ -326,7 +326,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Building2, title: "Pintura Predial", desc: "Restauração completa e lavagem de fachadas." },
-              { icon: Brush, title: "Efeitos Decorativos", desc: "Cimento Queimado, Marmorato e Texturas (Alta tendência)." },
+              { icon: Brush, title: "Efeitos Decorativos", desc: "Cimento queimado, marmorato e texturas em alta." },
               { icon: Wrench, title: "Tratamento de Superfícies", desc: "Impermeabilização, reparo de trincas e Drywall." },
               { icon: DoorOpen, title: "Acabamentos Especiais", desc: "Verniz em madeiras e pintura de portas." }
             ].map((service, idx) => (
@@ -384,7 +384,7 @@ function App() {
                 />
               </div>
             </div>
-            <p className="text-center text-slate-400 text-sm mt-4">Antes e Depois real de pintura executada pela Vertical Cor</p>
+            <p className="text-center text-slate-400 text-sm mt-4">Antes e Depois reais de pintura executada pela Vertical Cor</p>
           </Reveal>
         </div>
       </section>
