@@ -14,8 +14,7 @@ import {
   ChevronDown,
   ChevronUp,
   Wrench,
-  Send,
-  Building
+  Send
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
@@ -184,9 +183,10 @@ function App() {
             />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/30 to-navy-900/10 md:via-transparent md:to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
           <Reveal>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-white max-w-4xl">
               Sua fachada é o seu cartão de visitas. <br />
@@ -195,28 +195,29 @@ function App() {
           </Reveal>
 
           <Reveal delay={0.4}>
-            <p className="text-lg md:text-2xl text-slate-200 max-w-2xl mb-10 font-light border-l-4 border-cyan-500 pl-6">
+            <p className="text-lg md:text-2xl text-slate-100 max-w-2xl mb-10 border-l-4 border-cyan-500 pl-6">
               Especialistas em pintura predial, residencial e acabamentos de alto padrão em Vila Velha.
             </p>
           </Reveal>
 
           <Reveal delay={0.6}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(8,145,178,0.4)] flex items-center justify-center gap-2">
-                <Building size={20} /> QUERO VALORIZAR MEU IMÓVEL
+              <a href={whatsappBudgetLink} target="_blank" rel="noopener noreferrer" className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-full font-bold text-lg whitespace-nowrap transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(8,145,178,0.4)] flex items-center justify-center gap-2">
+                <WhatsAppIcon size={20} /> Pedir orçamento grátis
               </a>
             </div>
           </Reveal>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <ChevronDown size={32} />
-          </motion.div>
         </div>
+
+        {/* Scroll Indicator (no rodapé do hero, só no computador) */}
+        <motion.div
+          className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/50"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          aria-hidden="true"
+        >
+          <ChevronDown size={32} />
+        </motion.div>
       </section>
 
       {/* NOVO: Seção de Vídeo (Segunda Dobra) */}
