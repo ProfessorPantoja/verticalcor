@@ -319,7 +319,7 @@ function App() {
               { icon: Wrench, title: "Tratamento de Superfícies", desc: "Impermeabilização, reparo de trincas e Drywall." },
               { icon: DoorOpen, title: "Acabamentos Especiais", desc: "Verniz em madeiras e pintura de portas." }
             ].map((service, idx) => (
-              <Reveal key={idx} delay={idx * 0.1}>
+              <Reveal key={idx} delay={idx * 0.1} fullHeight>
                 <div className="group h-full p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-200 transition-all duration-300">
                   <div className="bg-navy-900 text-cyan-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all">
                     <service.icon size={28} />
