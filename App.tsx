@@ -372,11 +372,14 @@ function App() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border-4 border-navy-800 shadow-2xl shadow-black/50">
-              <BeforeAfterSlider
-                beforeImage="/antes.webp"
-                afterImage="/depois.webp"
-              />
+            {/* Moldura com borda em degradê ciano e brilho da marca */}
+            <div className="max-w-4xl mx-auto p-[3px] rounded-2xl bg-gradient-to-br from-cyan-400 via-navy-800 to-cyan-600 shadow-[0_0_90px_-20px_rgba(34,211,238,0.55)]">
+              <div className="rounded-[13px] overflow-hidden bg-navy-900">
+                <BeforeAfterSlider
+                  beforeImage="/antes.webp"
+                  afterImage="/depois.webp"
+                />
+              </div>
             </div>
             <p className="text-center text-slate-400 text-sm mt-4">Antes e Depois real de pintura executada pela Vertical Cor</p>
           </Reveal>

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ArrowLeftRight } from 'lucide-react';
+import { animate, useInView, useReducedMotion } from 'framer-motion';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -12,6 +13,25 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
   const [hasInteracted, setHasInteracted] = useState(false);
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.6 });
+  const reduceMotion = useReducedMotion();
+  const introRef = useRef<ReturnType<typeof animate> | null>(null);
+
+  // Ao aparecer na tela, o divisor desliza sozinho uma vez para mostrar que dá para arrastar.
+  // Para na hora se a pessoa tocar; não roda se o sistema pede menos movimento.
+  useEffect(() => {
+    if (!isInView || reduceMotion || hasInteracted) return;
+    introRef.current = animate(50, [50, 22, 78, 50], {
+      duration: 2.6,
+      delay: 0.4,
+      ease: 'easeInOut',
+      onUpdate: (v) => setSliderPosition(v),
+    });
+    return () => introRef.current?.stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isInView, reduceMotion]);
+
+  const stopIntro = () => introRef.current?.stop();
 
   // Mantém a largura do container em estado, atualizando em resize/rotação de tela
   useEffect(() => {
@@ -36,6 +56,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
   // Pointer events cobrem mouse, toque e caneta. O touch-action: pan-y deixa a
   // rolagem vertical com o navegador; só o arraste lateral move a barra.
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    stopIntro();
     setIsDragging(true);
     setHasInteracted(true);
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -57,6 +78,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
     else if (e.key === 'End') setSliderPosition(100);
     else return;
     e.preventDefault();
+    stopIntro();
     setHasInteracted(true);
   };
 
@@ -112,9 +134,10 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ beforeImage, afte
           aria-valuemax={100}
           aria-valuenow={Math.round(sliderPosition)}
           onKeyDown={handleKeyDown}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-500 w-11 h-11 rounded-full flex items-center justify-center shadow-lg border-2 border-white hover:scale-110 transition-transform focus-visible:ring-4 focus-visible:ring-cyan-300"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-500 w-11 h-11 rounded-full flex items-center justify-center shadow-[0_0_24px_rgba(34,211,238,0.7)] border-2 border-white hover:scale-110 transition-transform focus-visible:ring-4 focus-visible:ring-cyan-300"
         >
-          <ArrowLeftRight className="w-5 h-5 text-white" />
+          {!hasInteracted && <span className="absolute inset-0 rounded-full bg-cyan-400/60 animate-ping motion-reduce:hidden" aria-hidden="true"></span>}
+          <ArrowLeftRight className="relative w-5 h-5 text-white" />
         </div>
       </div>
 
