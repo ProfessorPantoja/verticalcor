@@ -14,7 +14,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({ eyebrow, title, 
     <span className={`block text-sm font-bold tracking-widest uppercase mb-3 ${dark ? 'text-cyan-400' : 'text-cyan-600'}`}>
       {eyebrow}
     </span>
-    <h2 className={`text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] ${dark ? 'text-white' : 'text-navy-900'}`}>
+    <h2 className={`text-3xl md:text-5xl font-bold tracking-tight leading-[1.15] text-balance ${dark ? 'text-white' : 'text-navy-900'}`}>
       {title}
     </h2>
     {subtitle && (
