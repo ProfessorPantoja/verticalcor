@@ -558,6 +558,16 @@ function App() {
 
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
             <p>© {new Date().getFullYear()} Vertical Cor. Todos os direitos reservados.</p>
+            {/* Crédito de quem fez o site: ícone e nome levam ao site da Letreiro Digital */}
+            <a
+              href="https://letreirodigital.com.br/?utm_source=verticalcor&utm_medium=credito-rodape"
+              target="_blank"
+              rel="noopener"
+              className="group mt-4 md:mt-0 inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
+            >
+              <img src="/letreiro-digital-icone.svg" alt="" width={22} height={22} className="w-[22px] h-[22px] rounded-md group-hover:scale-110 transition-transform" />
+              <span>Site feito pela <span className="font-semibold text-slate-300 group-hover:text-[#FEEE03] transition-colors">Letreiro Digital</span></span>
+            </a>
             <div className="mt-4 md:mt-0 flex gap-6">
               <a href="/politica-de-privacidade.html" className="hover:text-cyan-400 transition-colors">Política de Privacidade</a>
               <a href="/termos-de-uso.html" className="hover:text-cyan-400 transition-colors">Termos de Uso</a>
