@@ -37,6 +37,7 @@ function App() {
   const [logoError, setLogoError] = useState(false);
   const [formName, setFormName] = useState("");
   const [formPhone, setFormPhone] = useState("");
+  const [formProperty, setFormProperty] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   // Símbolo da marca (só o "V", fundo transparente); o nome vai em texto ao lado
@@ -67,7 +68,8 @@ function App() {
     const messageParts = [
       SITE_CONTACT.defaultWhatsAppMessage,
       formName.trim() ? `Nome: ${formName.trim()}` : "",
-      formPhone.trim() ? `Telefone informado: ${formPhone.trim()}` : ""
+      formPhone.trim() ? `Telefone informado: ${formPhone.trim()}` : "",
+      formProperty ? `Tipo de imóvel: ${formProperty}` : ""
     ].filter(Boolean);
 
     window.open(buildWhatsAppLink(messageParts.join("\n")), "_blank", "noopener,noreferrer");
@@ -465,16 +467,27 @@ function App() {
 
                 <form className="space-y-4" onSubmit={handleContactSubmit}>
                   <div>
-                    <label htmlFor="form-name" className="sr-only">Seu nome completo</label>
-                    <input id="form-name" name="name" type="text" autoComplete="name" aria-label="Seu nome completo" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu nome completo" value={formName} onChange={(event) => setFormName(event.target.value)} />
+                    <label htmlFor="form-name" className="sr-only">Seu nome</label>
+                    <input id="form-name" name="name" type="text" autoComplete="name" aria-label="Seu nome" className="w-full bg-white/5 border border-slate-600 rounded-xl px-6 py-4 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu nome" value={formName} onChange={(event) => setFormName(event.target.value)} />
                   </div>
                   <div>
-                    <label htmlFor="form-phone" className="sr-only">Seu telefone</label>
-                    <input id="form-phone" name="phone" type="tel" autoComplete="tel" required aria-label="Seu telefone" className="w-full bg-navy-800/50 border border-slate-700 rounded-xl px-6 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder={SITE_CONTACT.phoneDisplay} value={formPhone} onChange={(event) => setFormPhone(event.target.value)} />
+                    <label htmlFor="form-phone" className="sr-only">Seu telefone ou WhatsApp</label>
+                    <input id="form-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required aria-label="Seu telefone ou WhatsApp" className="w-full bg-white/5 border border-slate-600 rounded-xl px-6 py-4 text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" placeholder="Seu WhatsApp: (27) 9XXXX-XXXX" value={formPhone} onChange={(event) => setFormPhone(event.target.value)} />
+                  </div>
+                  <div>
+                    <label htmlFor="form-property" className="sr-only">Tipo de imóvel</label>
+                    <select id="form-property" name="property" className={`w-full bg-white/5 border border-slate-600 rounded-xl px-6 py-4 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all ${formProperty ? 'text-white' : 'text-slate-400'}`} value={formProperty} onChange={(event) => setFormProperty(event.target.value)}>
+                      <option value="" className="text-navy-900">Tipo de imóvel (opcional)</option>
+                      <option value="Prédio ou condomínio" className="text-navy-900">Prédio ou condomínio</option>
+                      <option value="Casa" className="text-navy-900">Casa</option>
+                      <option value="Comércio ou empresa" className="text-navy-900">Comércio ou empresa</option>
+                      <option value="Outro" className="text-navy-900">Outro</option>
+                    </select>
                   </div>
                   <button type="submit" className="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-cyan-900/50">
-                    <Send size={20} /> SOLICITAR ORÇAMENTO
+                    <WhatsAppIcon size={20} /> Pedir orçamento pelo WhatsApp
                   </button>
+                  <p className="text-slate-400 text-sm text-center">O WhatsApp abre com a sua mensagem pronta; é só enviar.</p>
                   {formSubmitted && (
                     <p role="status" className="text-green-400 text-sm text-center pt-1">
                       Abrimos o WhatsApp para você concluir o envio. Se não abriu, fale conosco pelo botão verde no canto da tela.
@@ -505,10 +518,16 @@ function App() {
 
                   <div className="space-y-6">
                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-300 hover:text-cyan-400 transition-colors group">
-                      <div className="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <WhatsAppIcon size={20} />
+                      </div>
+                      <span className="text-lg">WhatsApp {SITE_CONTACT.phoneDisplay}</span>
+                    </a>
+                    <a href={`tel:+${SITE_CONTACT.whatsappNumber}`} className="flex items-center gap-4 text-slate-300 hover:text-cyan-400 transition-colors group">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
                         <Phone size={20} />
                       </div>
-                      <span className="text-lg">{SITE_CONTACT.phoneDisplay}</span>
+                      <span className="text-lg">Ligar agora</span>
                     </a>
 
                   </div>
@@ -517,7 +536,7 @@ function App() {
             </Reveal>
           </div>
 
-          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
             <p>© {new Date().getFullYear()} Vertical Cor. Todos os direitos reservados.</p>
             <div className="mt-4 md:mt-0 flex gap-6">
               <a href="/politica-de-privacidade.html" className="hover:text-cyan-400 transition-colors">Política de Privacidade</a>
