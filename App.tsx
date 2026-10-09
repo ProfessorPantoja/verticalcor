@@ -340,7 +340,7 @@ function App() {
 
       {/* 5. Transformação (Before/After) */}
       <section id="portfolio" className="py-24 bg-navy-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle,_#ffffff_1px,_transparent_1px)] [background-size:24px_24px]" aria-hidden="true"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal>
@@ -365,7 +365,7 @@ function App() {
                 afterImage="/depois.webp"
               />
             </div>
-            <p className="text-center text-slate-500 text-sm mt-4">Antes e Depois real de pintura executada pela Vertical Cor</p>
+            <p className="text-center text-slate-400 text-sm mt-4">Antes e Depois real de pintura executada pela Vertical Cor</p>
           </Reveal>
         </div>
       </section>
