@@ -29,6 +29,7 @@ import { WhatsAppIcon } from './components/WhatsAppIcon';
 import { SectionHeading } from './components/SectionHeading';
 import { BrandRibbon } from './components/BrandRibbon';
 import { AnimatedWords } from './components/AnimatedWords';
+import { Spotlight } from './components/Spotlight';
 import { FAQItem } from './types';
 import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
@@ -269,39 +270,39 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <Reveal delay={0.2}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
+              <Spotlight className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
                   <TrendingDown size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Desvalorização</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
                   Pintura descascada e suja derruba o valor de venda e de aluguel do imóvel.
                 </p>
-              </div>
+              </Spotlight>
             </Reveal>
 
             <Reveal delay={0.4}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto -rotate-3">
+              <Spotlight className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto -rotate-3">
                   <ShieldAlert size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Infiltrações</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
                   Pequenas trincas hoje tornam-se grandes prejuízos estruturais amanhã.
                 </p>
-              </div>
+              </Spotlight>
             </Reveal>
 
             <Reveal delay={0.6}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-navy-900 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
+              <Spotlight className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
                   <Eye size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Má Impressão</h3>
                 <p className="text-slate-600 text-center leading-relaxed">
                   O que seus clientes ou visitas pensam ao ver sua fachada mal cuidada?
                 </p>
-              </div>
+              </Spotlight>
             </Reveal>
           </div>
         </div>
@@ -329,13 +330,13 @@ function App() {
               { icon: DoorOpen, title: "Acabamentos Especiais", desc: "Verniz em madeiras e pintura de portas." }
             ].map((service, idx) => (
               <Reveal key={idx} delay={idx * 0.1} fullHeight>
-                <div className="group h-full p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-200 transition-all duration-300">
-                  <div className="bg-navy-900 text-cyan-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all">
+                <Spotlight className="group h-full p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 text-cyan-400 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:from-cyan-500 group-hover:to-cyan-600 group-hover:text-white transition-all">
                     <service.icon size={28} />
                   </div>
                   <h3 className="text-xl font-bold text-navy-900 mb-3">{service.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{service.desc}</p>
-                </div>
+                </Spotlight>
               </Reveal>
             ))}
           </div>
@@ -391,21 +392,21 @@ function App() {
             </Reveal>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Sparkles, title: "Limpeza Extrema", text: "Protegemos seu piso e móveis. Entregamos a obra limpa." },
               { icon: CalendarCheck, title: "Prazo Garantido", text: "Cronograma seguido à risca." },
               { icon: PaintRoller, title: "Materiais Premium", text: "Só trabalhamos com tintas e insumos de primeira linha." },
               { icon: ReceiptText, title: "Orçamento Transparente", text: "Sem surpresas no final da obra." }
             ].map((item, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <div className="flex flex-col items-center text-center group">
-                  <div className="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center text-cyan-600 mb-6 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
+              <Reveal key={i} delay={i * 0.1} fullHeight>
+                <Spotlight className="h-full flex flex-col items-center text-center group bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full shadow-lg shadow-cyan-600/30 ring-8 ring-cyan-50 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                     <item.icon size={34} />
                   </div>
                   <h3 className="font-bold text-xl mb-3 text-navy-900">{item.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{item.text}</p>
-                </div>
+                </Spotlight>
               </Reveal>
             ))}
           </div>

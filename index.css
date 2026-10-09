@@ -64,3 +64,40 @@ body {
 a, button {
   transition: all 0.2s ease-in-out;
 }
+
+/* Holofote dos cards (components/Spotlight.tsx): luz que segue o mouse + borda acesa */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before,
+.spotlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.spotlight::before {
+  padding: 1.5px;
+  background: radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), rgba(34, 211, 238, 0.95), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.spotlight::after {
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), rgba(6, 182, 212, 0.10), transparent 50%);
+}
+
+@media (hover: hover) {
+  .spotlight:hover::before,
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+}
