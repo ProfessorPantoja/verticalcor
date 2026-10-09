@@ -30,6 +30,7 @@ import { SectionHeading } from './components/SectionHeading';
 import { BrandRibbon } from './components/BrandRibbon';
 import { AnimatedWords } from './components/AnimatedWords';
 import { Spotlight } from './components/Spotlight';
+import { SectionWave } from './components/SectionWave';
 import { FAQItem } from './types';
 import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
@@ -352,7 +353,9 @@ function App() {
       </section>
 
       {/* 5. Transformação (Before/After) */}
-      <section id="portfolio" className="py-24 bg-navy-900 text-white overflow-hidden relative">
+      <section id="portfolio" className="pt-28 pb-28 md:pt-40 md:pb-40 bg-navy-900 text-white overflow-hidden relative">
+        <SectionWave position="top" fillClassName="fill-white" />
+        <SectionWave position="bottom" fillClassName="fill-slate-50" />
         <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle,_#ffffff_1px,_transparent_1px)] [background-size:24px_24px]" aria-hidden="true"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -459,9 +462,12 @@ function App() {
       </section>
 
       {/* 8. Footer (Conversion + Map) */}
-      <footer id="contato" className="bg-navy-900 text-slate-300 pt-24 pb-24 md:pb-10 relative overflow-hidden">
+      <footer id="contato" className="bg-navy-900 text-slate-300 pt-28 md:pt-40 pb-24 md:pb-10 relative overflow-hidden">
+        <SectionWave position="top" fillClassName="fill-white" />
         {/* Decorative Blob */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        {/* A fita da marca, grande e bem suave, ao fundo do contato */}
+        <BrandRibbon className="absolute inset-0 w-full h-full" opacity={0.12} delay={0.2} duration={3} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 mb-20">
