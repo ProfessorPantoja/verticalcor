@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Phone,
   Menu,
@@ -20,13 +20,15 @@ import {
   ArrowRight,
   Send
 } from 'lucide-react';
-import { motion, MotionConfig } from 'framer-motion';
+import { motion, MotionConfig, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import MapSection from './components/MapSection';
 import { Reveal } from './components/Reveal';
 import { SmartVideoPlayer } from './components/SmartVideoPlayer';
 import { WhatsAppIcon } from './components/WhatsAppIcon';
 import { SectionHeading } from './components/SectionHeading';
+import { BrandRibbon } from './components/BrandRibbon';
+import { AnimatedWords } from './components/AnimatedWords';
 import { FAQItem } from './types';
 import { SITE_CONTACT, buildWhatsAppLink } from './siteConfig';
 
@@ -43,6 +45,12 @@ function App() {
   // Símbolo da marca (só o "V", fundo transparente); o nome vai em texto ao lado
   const simboloFundoEscuro = "/simbolo-vertical-cor-branco.png"; // V branco + fita ciano
   const simboloFundoClaro = "/simbolo-vertical-cor.png"; // V marinho + fita ciano
+
+  // Topo: a foto desce mais devagar que a rolagem (profundidade); desligado se o sistema pede menos movimento
+  const heroRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress: heroProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
+  const heroImageY = useTransform(heroProgress, [0, 1], ['0%', reduceMotion ? '0%' : '18%']);
 
   // Determine if header should be solid (scrolled OR menu open)
   const isHeaderSolid = isScrolled || isMenuOpen;
@@ -172,13 +180,14 @@ function App() {
       </motion.header>
 
       {/* 2. Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="inicio" ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image - Predial High End */}
         <div className="absolute inset-0 z-0">
           <motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 10, ease: "easeOut" }}
+            style={{ y: heroImageY }}
             className="w-full h-full"
           >
             <img
@@ -192,15 +201,15 @@ function App() {
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/30 to-navy-900/10 md:via-transparent md:to-transparent"></div>
+          {/* Assinatura: a fita ciano da logo se desenha atrás do texto */}
+          <BrandRibbon className="absolute inset-0 w-full h-full mix-blend-screen translate-y-[24%] md:translate-y-[26%]" opacity={0.4} delay={0.5} duration={2.6} />
         </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-          <Reveal>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-white max-w-4xl">
-              Sua fachada é o seu cartão de visitas. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">Não deixe seu patrimônio desvalorizar.</span>
-            </h1>
-          </Reveal>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-white max-w-4xl">
+            <AnimatedWords text="Sua fachada é o seu cartão de visitas." delay={0.3} /> <br />
+            <AnimatedWords text="Não deixe seu patrimônio desvalorizar." delay={0.8} wordClassName="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200" />
+          </h1>
 
           <Reveal delay={0.4}>
             <p className="text-lg md:text-2xl text-slate-100 max-w-2xl mb-10 border-l-4 border-cyan-500 pl-6">
