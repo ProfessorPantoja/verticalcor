@@ -273,7 +273,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <Reveal delay={0.2}>
               <Spotlight className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
+                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto">
                   <TrendingDown size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Desvalorização</h3>
@@ -285,7 +285,7 @@ function App() {
 
             <Reveal delay={0.4}>
               <Spotlight className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto -rotate-3">
+                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto">
                   <ShieldAlert size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Infiltrações</h3>
@@ -297,7 +297,7 @@ function App() {
 
             <Reveal delay={0.6}>
               <Spotlight className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-cyan-500 hover:-translate-y-2 transition-transform duration-300 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto rotate-3">
+                <div className="w-16 h-16 bg-gradient-to-br from-navy-800 to-navy-900 ring-1 ring-cyan-400/30 shadow-lg shadow-navy-900/30 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 mx-auto">
                   <Eye size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-navy-900 mb-3 text-center">Má Impressão</h3>
