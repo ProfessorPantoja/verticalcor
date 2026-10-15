@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Phone,
+  Mail,
   Menu,
   X,
   PaintBucket,
@@ -548,6 +549,12 @@ function App() {
                         <Phone size={20} />
                       </div>
                       <span className="text-lg">Ligar agora</span>
+                    </a>
+                    <a href={`mailto:${SITE_CONTACT.email}`} className="flex items-center gap-4 text-slate-300 hover:text-cyan-400 transition-colors group">
+                      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                        <Mail size={20} />
+                      </div>
+                      <span className="text-lg break-all">{SITE_CONTACT.email}</span>
                     </a>
 
                   </div>

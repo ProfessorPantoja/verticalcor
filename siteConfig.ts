@@ -1,6 +1,7 @@
 export const SITE_CONTACT = {
   phoneDisplay: "(27) 99935-1626",
   whatsappNumber: "5527999351626",
+  email: "pedro@verticalcor.com.br",
   address: "Rua Paulo Cesar Lira, 106 - Alecrim, Vila Velha - ES, 29118-115, Brasil",
   mapsQuery: "Rua Paulo Cesar Lira, 106, Alecrim, Vila Velha - ES, 29118-115, Brasil",
   reference: "Atrás do Supermercado Economia",
