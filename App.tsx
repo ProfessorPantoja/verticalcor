@@ -385,7 +385,7 @@ function App() {
                 />
               </div>
             </div>
-            <p className="text-center text-slate-400 text-sm mt-4">Antes e Depois reais de pintura executada pela Vertical Cor</p>
+            <p className="text-center text-slate-400 text-sm mt-4">Veja a transformação que a pintura pode trazer</p>
           </Reveal>
         </div>
       </section>
